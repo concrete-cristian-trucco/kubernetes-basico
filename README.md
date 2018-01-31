@@ -1,14 +1,14 @@
 # Kubernetes básico
 Demonstração básica dos componentes do Kubernetes
 
-### cenário aplicação Nginx com html básico.
-
-* Api kubecetl
-* minikube
-* deploy de serviço
+### Cenário aplicação Nginx com html básico.
+#### Necessário VirtualBox ou HiperV para Rodar localmente, ou rodar essa Demo no http://play-with-k8s.com
+* Api kubecetl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+* Minikube: https://github.com/kubernetes/minikube/releases
+* Deploy de serviço: Usar os exemplos desse repositório
 
 #### Acessar o Dashboard do Kubernetes
-<pre>   minikube dashboard </pre> 
+<pre> minikube dashboard </pre> 
 
 #### Listar os nodes(minions)
 <pre> kubectl get nodes </pre>
