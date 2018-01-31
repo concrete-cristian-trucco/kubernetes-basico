@@ -34,3 +34,7 @@ Demonstração básica dos componentes do Kubernetes
 <pre> kubectl get deployment,svc,pods,pvc </pre> 
 #### Segunda alternativa para o comando acima
 <pre> kubectl gel all </pre>  
+
+
+##### Documentação da Api do Kubernetes
+https://kubernetes.io/docs/api-reference/v1.9/#_v1_container
