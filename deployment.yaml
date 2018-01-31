@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: aplicacao-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+       name: aplicacao-nginx
+    spec:
+      containers:
+        - name: container-aplicacao-nginx
+          image: concretecristiantrucco/bbmtalk  
+          ports:
+            - containerPort: 80

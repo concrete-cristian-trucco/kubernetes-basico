@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aplicacao-nginx
+spec:
+  containers:
+    - name: container-aplicacao-nginx
+      image: concretecristiantrucco/bbmtalk
+      ports:
+        - containerPort: 80
