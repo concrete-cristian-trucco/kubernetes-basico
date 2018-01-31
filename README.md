@@ -1,14 +1,20 @@
 # Kubernetes básico
+![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
+
 Demonstração básica dos componentes do Kubernetes
 
 ### Cenário aplicação Nginx com html básico.
 #### Necessário VirtualBox ou HiperV para Rodar localmente, ou rodar essa Demo no http://play-with-k8s.com
 * Api kubecetl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 * Minikube: https://github.com/kubernetes/minikube/releases
+
+![Minikube](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/minikube.jpg)
 * Deploy de serviço: Usar os exemplos desse repositório
 
 #### Acessar o Dashboard do Kubernetes
 <pre> minikube dashboard </pre> 
+
+![Dashboard](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes_dashboard.png)
 
 #### Listar os nodes(minions)
 <pre> kubectl get nodes </pre>
