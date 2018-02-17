@@ -11,10 +11,16 @@ Demonstração básica dos componentes do Kubernetes
 ![Minikube](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/minikube.jpg)
 * Deploy de serviço: Usar os exemplos desse repositório
 
+
+#### Subir o Minikube na máquina
+<pre> minikube start </pre> 
+
 #### Acessar o Dashboard do Kubernetes
 <pre> minikube dashboard </pre> 
 
 ![Dashboard](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes_dashboard.png)
+
+#### O Kubectl é a cli que usaremos para interagir com nosso cluster
 
 #### Listar os nodes(minions)
 <pre> kubectl get nodes </pre>
