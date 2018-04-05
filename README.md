@@ -29,10 +29,10 @@ Demonstração básica dos componentes do Kubernetes
 <pre> kubectl get pods </pre> 
  
 #### Criar um pod 
-* Que é a menor unidade no Kube, é a abstração dos containers
+* É a menor unidade no cluster do Kube, é o objeto que faz a abstração dos containers
 <pre> kubectl create -f aplicação.yaml </pre> 
  
-#### Deployments é o que garante o estados dos pods
+#### Deployments é o que garante o estados dos pods, é nele que defino a quantidades de pods que irei rodar
 * Comando cria o objeto deployment abstraindo o pod
 <pre> kubectl create -f deployment.yaml </pre> 
  
