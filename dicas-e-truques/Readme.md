@@ -1,4 +1,4 @@
-## Aliases para bash Linux
+## Aliases Kubernetes para bash Linux/Mac
 
 ### Editar o arquivo bashrc
 
