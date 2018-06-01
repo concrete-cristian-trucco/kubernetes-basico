@@ -1,0 +1,1 @@
+## Aliases para bash Linux

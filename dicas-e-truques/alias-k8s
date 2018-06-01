@@ -1,0 +1,21 @@
+# Lista de aliases para ser usado no bash linux
+
+# Aliases Kubernetes
+alias k="kubectl"
+alias kube="kubectl"
+alias kc="kubectl create" # Criar objetos no Cluster
+alias ks="kubectl -n kube-system" # Listar objetos do Namespace de Sistema
+alias kgp="kube get pods" # Listar Pods
+alias kgs="kube get svc" # Listar Serviços
+alias kgd="kube get deploy" # Listar Deployments
+alias kgn="kube get nodes" # Listar todos os nós
+alias kgsec="kube get secrets" # Listar Secrets
+alias kgi="kube get ingress" # Listar Ingress
+alias kl="kube logs" # Pegar logs
+alias kcc="kube config current-context" # Verificar contexto corrente
+alias kgpa="kubectl get pods --all-namespaces" # Listar pods em todos os Namespaces
+alias kga="kube get all" # Listar todos objetos no Namespace
+alias kd="kube delete" # Deletar um objeto
+alias kap="kube apply -f" # apply para aplicar/criar os objetos declarados no yaml
+alias kgall="kube get all --all-namespaces" # pegar todos objetos do cluster em todos os namespaces
+alias kinfo="kube cluster-info" # Verificar o cluster
