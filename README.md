@@ -1,7 +1,7 @@
 # Kubernetes básico
 ![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
 
-### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
+#### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
 
 * Apresentação: https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing
 
@@ -23,7 +23,7 @@
 
 #### O Kubectl é a cli que usaremos para interagir com nosso cluster
 
-#### Listar os nodes(minions)
+#### Listar os nós do cluster
 <pre> kubectl get nodes </pre>
 
 #### Listar os pods
