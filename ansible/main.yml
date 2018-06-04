@@ -75,7 +75,7 @@
    - name: Stop and disable firewalld.
      service: name=firewalld state=stopped enabled=false
         
-  # Certificados para conexão com VIC
+  # Certificados para conexão com repo caso necessário
    - name: Copia certificados para host
      copy:
         src: rootca.crt
