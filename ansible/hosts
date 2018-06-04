@@ -1,0 +1,17 @@
+# Only one master is allowed
+
+[all]
+#192.168.2.99 ansible_ssh_user=root ansible_ssh_pass=senhalegal
+
+[master]
+#master.example.com
+192.168.2.99 ansible_ssh_user=root ansible_ssh_pass=senhalegal
+
+[node]
+#node[1:2].example.com
+
+[all:vars]
+ansible_connection=ssh 
+ansible_ssh_user=root
+ansible_ssh_pass=senhalegal
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
