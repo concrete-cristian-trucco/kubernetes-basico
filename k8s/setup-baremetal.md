@@ -208,37 +208,39 @@ vi  development.yaml
       "name": "desenvolvimento"
     }
   }
-}```
- 
+}
+```
 
 * Listar contextos e namespace criados:
+
 ```
 kubectl config view
 
 kubectl get namespace
+
 ```
 
 * Resolver problemas de acesso ao Dashboard:
-
 https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
 
 * Referências: para montagem do roteiro - Documentação oficial.
 https://kubernetes.io/docs/setup/independent/install-kubeadm/
 
 #### Dica
-
 Para adicionar mais nodes/workes no caso de não ter o token gerado com o comando kubeadm init
 
-Pegar o token gerado na saida no kubeadm init
+* Pegar o token gerado na saida no kubeadm init
 
 ```
 kubeadm token list
 ```
 
-Saida do comando > 
+* Saida do comando 
+```
 74eaf3.2cerfwfw1a15sf0a
-
+```
 #### Exemplo do comando
+
 ```
 kubeadm join --token ($token) --discovery-token-unsafe-skip-ca-verification ($ip-master):6443
 ```
