@@ -95,10 +95,10 @@
    - name: Enable and start kubelet
      systemd: state=started enabled=yes name=kubelet
 
-# Login no VIC
-#   - name: Docker Login Private Registry VIC
+# Login no Registry
+#   - name: Docker Login Private Registry 
 #     docker_login:
-       #registry: vic.raiz.bbm
+       #registry: docker.registry.com
        #username: yourself
 #       password: secrets3
        #reauthorize: yes
