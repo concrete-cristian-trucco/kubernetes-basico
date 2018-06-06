@@ -16,6 +16,11 @@
 #### Subir o Minikube na máquina
 <pre> minikube start </pre> 
 
+#### Subir o Minikube modo RBAC e passando versão do Kubernetes desejada
+<pre>
+minikube start --kubernetes-version v1.10.0 --vm-driver=virtualbox --extra-config='apiserver.Authorization.Mode=RBAC'
+</pre> 
+
 #### Acessar o Dashboard do Kubernetes
 <pre> minikube dashboard </pre> 
 
