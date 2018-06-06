@@ -1,5 +1,13 @@
 # Guia de Instalação Nginx Ingress Baremetal
 
+Fiz esse guia por que senti necessidade de configurar um controlador ingress em um cluster baremetal e a maioria dos exemplos que achava na web era para cloud, onde ao expor um service no cluster - especificando o type LoadBlancer, a propria infra da cloud seja ela Azure o AWS provisiona automáticamente um ip (vip) para acessar o serviço na porta 80 ou 443 do ip atribuido ao serviço, bastando apenas configurar o dns para responder para esse Ip. 
+
+Isso vira um problema quando se tem vários serviços no cluster e cada um com um LoadBalancer, lembrando que a maioria das clouds cobra por esse serviços, o ideal é ter um ponto de entrada um controlador ingress encaminhando essas requisições para o cluster. 
+
+Mas voltando para o nosso problema resolvi colocar o passo a passo para que ao criar um objeto ingress no cluster (baremetal) para que seja prossivel o cluster encaminhar essas requisições DNS > para um serviço no Kubernetes sem que seja necessário mapear NodePort ou ter um proxy fora do cluster onde fica dificil gerencia os ingress.
+
+O Ingress Controller nesse exemplo abaixo nada mais é que um pod de Nginx que fica observando a criação de entradas ingress para cluster, colocando as entradas que vão sendo criadas e dando um reload no serviço automáticamente então basta configurar o DNS para apontar para qualquer nó do cluster que o cluster vai saber encaminha a requisição para o serviço desejado.
+
 ## Conteúdo do Guia
 
 - [Comandos mandatórios](#comandos-mandatórios)
