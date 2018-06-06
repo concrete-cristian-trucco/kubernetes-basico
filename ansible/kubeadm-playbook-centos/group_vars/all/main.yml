@@ -1,6 +1,6 @@
 # global variables
 ---
-# vars file for kubeadm-bbm
+# vars file for kubeadm
 
 kubeadm_version: kubeadm-1.9.3-0.x86_64
 kubectl_version: kubectl-1.9.3-0.x86_64
