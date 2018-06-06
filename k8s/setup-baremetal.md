@@ -138,11 +138,11 @@ kubeadm join --token fe75e3.827db73r3qw8950a 192.168.50.15:6443 --discovery-toke
 ```
 
 
-===========================Dashboard-Kubernetes===========================
+#### Dashboard-Kubernetes
 
 * Referencia: https://github.com/kubernetes/dashboard/
 
-* create secrete dashboard:
+* Create secrete dashboard:
 
 kubectl create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs -n kube-system
 
@@ -150,27 +150,34 @@ kubectl create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+
 ```
 
 * Editar o service do dashboard:
+
 ```
 kubectl -n kube-system edit service kubernetes-dashboard
 ```
+
 #### Obs: Alterar type de : ClusterIP para NodePort, esse procedimento é necessário para expor o serviço do dashboard para fora
 do cluster, ou editar o arquivo yaml e depois realizar o apply desse arquivo no cluster.
-      
+
 * Visualizar os namespace criados no cluster.
+
 ```
 kubectl config view
 ```
 
 * Criar contexto test para realizar deploy no namespace selecionado.
+
 ```
 kubectl config set-context test --namespace=test --cluster=kubernetes-admin@kubernetes --user=kubernetes-admin@kubernetes
 ```
      
 * Listar os contextos:
+```
 kubectl config view
+```
 
 * Verificar contexto atual:
 ```
@@ -183,18 +190,22 @@ kubectl config set-context dev --namespace=desenvolvimento --cluster=kubernetes 
 ```
 * Referencia: https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
 
-* pegar todos os secrets do cluster e tokens
+* Pegar todos os secrets do cluster e tokens
+
 ```
 kubectl -n kube-system describe secret
 ```
 
 * Pegar token namespacecontroller
+
 ```
 kubectl -n kube-system describe secret namespace-controller
 ```
+
 * Referência: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
 
 * Criar namespace para desenvolvimento:
+
 ```
 vi  development.yaml
 
@@ -209,15 +220,16 @@ vi  development.yaml
     }
   }
 }
+
 ```
 
 * Listar contextos e namespace criados:
 
 ```
 kubectl config view
-
+```
+```
 kubectl get namespace
-
 ```
 
 * Resolver problemas de acesso ao Dashboard:
@@ -235,10 +247,12 @@ Para adicionar mais nodes/workes no caso de não ter o token gerado com o comand
 kubeadm token list
 ```
 
-* Saida do comando 
+* Saida do comando
+
 ```
-74eaf3.2cerfwfw1a15sf0a
+74ew3f3.2cerfwfw1a15sf0a
 ```
+
 #### Exemplo do comando
 
 ```
