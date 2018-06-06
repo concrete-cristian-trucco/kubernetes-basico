@@ -9,6 +9,9 @@
 * Api kubecetl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
 * Minikube: https://github.com/kubernetes/minikube/releases
 
+#### Para Windows utilize meu artigo que mostra como rodar o Minikube no Windows usando o Chocolatey
+* Minikube no Windows: https://concrete.com.br/2018/05/14/chocolatey-o-que-e-e-como-usar/
+
 ![Minikube](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/minikube.jpg)
 * Deploy de serviço: Usar os exemplos desse repositório
 
