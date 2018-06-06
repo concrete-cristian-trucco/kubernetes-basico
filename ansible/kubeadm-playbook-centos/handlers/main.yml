@@ -1,0 +1,14 @@
+---
+# handlers file for kubeadm-bbm
+
+- name: Restart docker
+  systemd: name=docker state=restarted
+
+- name: Reload systemd
+  command: systemctl daemon-reload
+
+- name: Restart kubelet
+  systemd: name=kubelet state=restarted
+
+- name: Start ntpd service
+  service: name=ntpd state=restarted enabled=yes 

@@ -1,0 +1,48 @@
+# Playbbok para atualizar pacotes de segurança no Centos
+# yum updateinfo list security all [Para verificar todas as atualizações de segurança disponíveis]
+# yum updateinfo list serurity installed [Para verificar as correções de segurança instaladas]
+# yum -y update --security [Para instalar todos os patches de segurança disponíveis]
+# yum update-minimal --security -y [Para instalar apenas os pacotes com uso de erratas de segurança]
+# man yum-security [Para mais comandos, consulte as páginas de manual do yum-security com]
+# Role de segurança
+
+---
+#- hosts: all
+#  user: root
+#  become: yes
+
+#  tasks:
+   - name: ping em todos os nodes
+     ping:
+
+   # centos (todos)
+   - name: verifica/instala yum-utils
+     package:
+       name: yum-utils
+       state: present
+     become: true
+     when: ansible_distribution == "CentOS"
+   
+
+   - name: list security updates
+     yum:
+       list: security
+     register: list-security
+     tags: security
+
+   - debug:
+       var: list-security
+       verbosity: 3
+
+   - name: install security updates
+     yum:
+        name: '*'
+        security: yes
+        state: latest
+        #register: install-security
+     become: true  
+
+
+   #- debug:
+   #    var: install-security
+   #    verbosity: 3

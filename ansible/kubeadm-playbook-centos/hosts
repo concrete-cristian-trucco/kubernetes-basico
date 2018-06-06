@@ -1,0 +1,13 @@
+# Only one master is allowed
+
+[all]
+#192.168.2.34
+
+[master]
+#master.example.com
+192.168.50.10 ansible_connection=ssh ansible_user=root
+
+[node]
+#node[1:2].example.com
+#192.16.35.10 ansible_connection=ssh ansible_user=root	
+
