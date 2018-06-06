@@ -128,7 +128,7 @@ systemctl  restart kubelet && systemctl enable kubelet
 
 #### Obs: Copiar e colar saída do kubeadm init do master e colar nos nodes que faram parte do cluster:
 ```
-kubeadm join --token fe75e3.827db73r3qw8950a 192.168.50.15:6443 --discovery-token-ca-cert-hash sha256:7e6ce969eda1rweqaebcfb7632376c3053d8e3430b04e703b7eb789a0e342bb4
+kubeadm join --token fe75e3.827db73r3qw8950a 192.168.50.15:6443 --discovery-token-ca-cert-hash sha256:7e6ce96dfsdewqaebcfb7632376c3053d8e3430b04e703b7eb789a0e342bb4
 ```
 
 
@@ -141,17 +141,17 @@ kubeadm join --token fe75e3.827db73r3qw8950a 192.168.50.15:6443 --discovery-toke
 kubectl create secret generic kubernetes-dashboard-certs --from-file=$HOME/certs -n kube-system
 
 * Deploy Dashboard:
+
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 ```
 
-* Editar yaml dashboard:
+* Editar o service do dashboard:
 ```
 kubectl -n kube-system edit service kubernetes-dashboard
 ```
-
 #### Obs: Alterar type de : ClusterIP para NodePort, esse procedimento é necessário para expor o serviço do dashboard para fora
-do cluster.
+do cluster, ou editar o arquivo yaml e depois realizar o apply desse arquivo no cluster.
       
 * Visualizar os namespace criados no cluster.
 ```
@@ -163,15 +163,15 @@ kubectl config view
 kubectl config set-context test --namespace=test --cluster=kubernetes-admin@kubernetes --user=kubernetes-admin@kubernetes
 ```
      
-* listar os contextos:
+* Listar os contextos:
 kubectl config view
 
-* verificar contexto atual:
+* Verificar contexto atual:
 ```
 kubectl config current-context
 ```
 
-Criar os namespaces para development e homologacao:
+Criar os namespaces para desenvolvimento 
 ```
 kubectl config set-context dev --namespace=desenvolvimento --cluster=kubernetes --user=kubernetes-admin
 ```
