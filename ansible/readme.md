@@ -41,3 +41,13 @@ ssh-keygen
 ```
 ssh-copy-id root@192.168.2.99
 ```
+# tree
+.
+├── handlers
+│   └── main.yml
+├── tasks
+│   └── main.yml
+├── templates
+│   └── conf.j2
+└── vars
+    └── main.yml
