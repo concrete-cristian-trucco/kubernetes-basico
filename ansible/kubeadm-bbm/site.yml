@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: security
+    
+- hosts: master
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: master
+
+- hosts: node
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: nodes

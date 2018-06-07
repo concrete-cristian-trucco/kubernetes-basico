@@ -1,0 +1,163 @@
+---
+
+   - name: ping em todos os nodes
+     ping: 
+   
+   - name: set hostname with fqdn
+     hostname:
+       name: master1
+     #when: set_hostname_to_inventory_hostname | default ( False )
+
+   - name: Create kubernetes yum repository
+     yum_repository:
+       name: kubernetes
+       description: Kubernetes
+       baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+       gpgcheck: no
+
+   - name: Disable selinux
+     selinux: policy=targeted state=permissive
+
+   - name: Clean Yum metadata
+     command: yum clean all
+     args:
+       warn: no
+
+   - name: Remove swapfile /etc/fstab
+     mount:
+       name: swap
+       fstype: swap
+       state: absent
+
+   - name: Disable swap
+     command: swapoff -a
+     when: ansible_swaptotal_mb > 0
+
+   # Instala pacotes e dependencias para kubernetes
+   - name: Install Packages Kubernetes
+     yum: name={{ item }} state=installed
+     with_items:
+     - ntp 
+     - docker
+     - "{{ kubeadm_version }}"
+     - "{{ kubectl_version }}"
+     - "{{ kubelet_version }}"
+     #- kubernetes-cni
+     tags:
+       - kubernetes
+   
+   - name: Use systemd kubelet cgroup driver
+     lineinfile:
+       dest: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+       insertafter: '^Environment=\"KUBELET_AUTHZ_ARGS'
+       line: 'Environment="KUBELET_EXTRA_ARGS=--cgroup-driver=systemd"'
+     notify:
+     - Reload systemd
+     - Restart kubelet
+   
+   # Configurações Globais do SO
+   - name: Configurando timezone
+     command: timedatectl set-timezone America/Sao_Paulo 
+
+   - name: stop ntpd service
+     service: name=ntpd state=stopped
+
+   - name: Sincronizando a hora
+     command: ntpd -gq
+     ignore_errors: yes
+     tags:
+       - ntpd
+   
+   - name: start ntpd service
+     service: name=ntpd state=restarted enabled=yes 
+
+   - name: Stop and disable firewalld.
+     service: name=firewalld state=stopped enabled=false
+        
+  # Certificados para conexão com VIC
+   - name: Copia certificados para host
+     copy:
+        src: rootca.crt
+        dest: /etc/pki/ca-trust/source/anchors/  
+  
+   - name: Instala certificados
+     command: update-ca-trust exported  
+
+   # Caso exista manifesto do cluster remove
+   - name: Reset any existing cluster
+     command: /usr/bin/kubeadm reset
+
+   - name: Enable and start docker
+     systemd: state=started enabled=yes name=docker
+
+   - name: Enable and start kubelet
+     systemd: state=started enabled=yes name=kubelet
+
+# Login no VIC
+#   - name: Docker Login Private Registry VIC
+#     docker_login:
+#     registry: vic.raiz.bbm
+#     username: yourself
+#     password: secrets3
+#     reauthorize: yes
+
+#   - name: Generate cluster token
+#     command: /usr/bin/kubeadm token generate
+#     register: kubeadm_token_generate
+#     when: kubeadm_token is not defined
+#   - set_fact: kubeadm_token={{ kubeadm_token_generate.stdout }}
+#     when: kubeadm_token is not defined
+ 
+   - name: flannel to work correctly
+     command: sysctl net.bridge.bridge-nf-call-iptables=1
+
+   #### Etapas a seguir são para inicializar o Master e criar o cluster   
+
+   # Essa etapa é executada caso o nó seja o Master, criar role para Master/Worker
+
+   - name: Inicializa o cluster
+     command: /usr/bin/kubeadm init --apiserver-advertise-address {{ master_ip }} --pod-network-cidr 10.244.0.0/16 # --token {{ kubeadm_token }}
+     register: output
+     
+   - name: saida kubeadm init
+     debug:
+       var: output
+   
+   - name: Acesso root ao kubectl
+     shell: mkdir -p $HOME/.kube && \
+              cp -rf /etc/kubernetes/admin.conf $HOME/.kube/config && \
+              chown $(id -u):$(id -g) $HOME/.kube/config 
+
+   - name: Cria a Rede do Cluster 
+     command: /usr/bin/kubectl apply -f {{ flannel_url }} -n kube-system
+     
+     environment:
+      KUBECONFIG: /etc/kubernetes/admin.conf
+  
+   - name: Wait few seconds for images pulls and cluster services to start
+     pause: seconds=10
+     changed_when: false
+
+   # Listar todos os nós do Cluster
+   - name: Get Nodes
+     command: /usr/bin/kubectl get nodes
+     msg: "Kubernetes running"
+     timeout: 30
+     register: output
+     tags: get-node
+
+   - name: Exibe saida Get Nodes 
+     debug:
+        var: output
+     tags: get-node   
+
+   # Apenas para testes
+   - name: Habilitar Master /p rodar pods
+     command: kubectl taint nodes --all node-role.kubernetes.io/master- 
+     tags: master-drain
+
+   - name: deploy test
+     shell: kubectl apply -f https://raw.githubusercontent.com/concrete-cristian-trucco/aplicacao-12-fatores/master/deployment-all.yaml
+     environment:
+       KUBECONFIG: /etc/kubernetes/admin.conf
+     ignore_errors: yes   

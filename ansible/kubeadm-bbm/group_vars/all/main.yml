@@ -1,0 +1,9 @@
+# global variables
+---
+# vars file for kubeadm-bbm
+
+kubeadm_version: kubeadm-1.9.3-0.x86_64
+kubectl_version: kubectl-1.9.3-0.x86_64
+kubelet_version: kubelet-1.9.3-0.x86_64
+master_ip: 192.168.50.10
+flannel_url: https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
