@@ -1,4 +1,10 @@
 
+## Deploy do painel do kubernetes com Rbac
+
+```
+kubectl apply -f kubernetes-dashboard-rbac.yaml
+
+```
 Criando uma SA para acessar o Dashboard do Kubernetes. 
 
 ```
