@@ -35,7 +35,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: view
+  name: view # usando a Role View não é possivel acessar secrets
 subjects:
 - kind: ServiceAccount
   name: kubernetes-dashboard-dev
@@ -49,9 +49,9 @@ subjects:
 ```
 #### Pegar o Token do ServiceAccount dev
 
-
+```
    kubectl describe secret kubernetes-dashboard-dev -n kube-system
-
+```
 #### Pegar o token e logar no dashboard
 
 Saída do comando:
