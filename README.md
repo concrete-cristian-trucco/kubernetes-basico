@@ -9,7 +9,7 @@ data: 06/06/2018
 ---
 # Kubernetes básico
 
-![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
+[![Kubernetes alt](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)](https://kubernetes.io)
 
 #### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
 * [Apresentação Kubernetes](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
