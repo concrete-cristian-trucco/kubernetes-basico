@@ -26,7 +26,7 @@ data: 06/06/2018
 
 
 #### Subir o Minikube na máquina
-<pre> minikube start </pre> 
+<pre>minikube start</pre> 
 
 #### Subir o Minikube modo RBAC e passando versão do Kubernetes desejada
 <pre>
