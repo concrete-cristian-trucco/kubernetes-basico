@@ -10,7 +10,7 @@ ms.date: 06/06/2018
 ![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
 
 #### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
-* [Artigo Chocolatey](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
+* [Apresentação Kubernetes](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
 
 #### Necessário VirtualBox ou HiperV para Rodar localmente, ou rodar essa Demo no http://play-with-k8s.com
 * [Api kubecetl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
