@@ -1,5 +1,12 @@
 # Guia de Instalação Nginx Ingress Baremetal
 
+## Conteúdo do Guia
+
+- [Comandos mandatórios](#comandos-mandatórios)
+- [Instalar Nginx Controller com regras RBAC](#instalar-nginx-controller-com-regras-rbac)
+  - [Baremetal](#baremetal)
+  - [Verificando a instalação](#verificando-instalação)
+
 ### Motivação 
 
 Fiz esse guia pois senti a necessidade de configurar um controlador ingress em um cluster baremetal, e a maioria dos exemplos que achava na web era para cloud, onde ao expor um service no cluster - especificando o type LoadBlancer, a propria infra da cloud seja ela Azure o AWS provisiona automáticamente um ip (vip) para acessar o serviço na porta 80 ou 443 do ip atribuido ao serviço (parece até mágica), bastando apenas configurar o dns para responder para esse Ip. 
@@ -40,6 +47,8 @@ Os serviços de controle de ingress que executam o papel de proxy e que foram av
 ###  4.  Ganho em usar esse recurso.
 O ganho em se utilizar essa abordagem é que não precisamos controlar portas de serviços expostos no cluster.
 
+* Declarando um objeto do Ingress no arquivo **yaml**, para acessar na porta 80 do cluster, o ingress irá associar **serviceName: test** ao ingress **test-ingress**.
+
 ```
 Exemplo de um objeto Ingress:
 apiVersion: extensions/v1beta1
@@ -71,16 +80,11 @@ kubectl get ing
 ```
  http://nomedoserviconodns/testpath
 ```
-## Conteúdo do Guia
-
-- [Comandos mandatórios](#comandos-mandatórios)
-- [Instalar Nginx Controller com regras RBAC](#instalar-nginx-controller-com-regras-rbac)
-  - [Baremetal](#baremetal)
-  - [Verificando a instalação](#verificando-instalação)
 
 ## Deploy Genérico 
+#### Setup do Nginx baremetal com Rbac
 
-The following resources are required for a generic deployment.
+Os passos a seguir são mandatórios para o setup do Ingress
 
 ### Comandos Mandatórios
 
@@ -120,6 +124,10 @@ Using [NodePort](https://kubernetes.io/docs/concepts/services-networking/service
 kubectl apply -f deploy/service-nodeport.yaml 
     
 ```
+* Ou para ser mais rápido rode o comando na pasta deploy.
+```
+kubectl apply -f deploy/
+```
 
 ## Verificando instalação
 
@@ -132,9 +140,9 @@ kubectl get pods --all-namespaces -l app=ingress-nginx --watch
 Once the operator pods are running, you can cancel the above command by typing `Ctrl+C`.
 Now, you are ready to create your first ingress.
 
-## Detect installed version
+## Versão da instalação 
 
-To detect which version of the ingress controller is running, exec into the pod and run `nginx-ingress-controller version` command.
+Conferindo a versão do ingress controller is running, executando dentro do pod `nginx-ingress-controller version` command.
 
 ```console
 POD_NAMESPACE=ingress-nginx
