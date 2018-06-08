@@ -1,4 +1,12 @@
+---
+title: Kubernetes básico
+description: Esse repositório tem algumas ferramentas para automátizar o processo de criação do cluster baremetal.
+author: Cristian Trucco
+ms.author: cristian-trucco
+ms.date: 06/06/2018
+---
 # Kubernetes básico
+
 ![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
 
 #### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
