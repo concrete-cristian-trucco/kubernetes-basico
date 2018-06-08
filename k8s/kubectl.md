@@ -1,15 +1,23 @@
 ### Sobre kubectl
-O utilitário kubectl permite que você interfira com o gerenciador de cluster Kubernetes. Por exemplo, você pode adicionar e excluir nós, pods, controladores de replicação e serviços.
-Você também pode verificar seu status, e assim por diante.
+O utilitário kubectl permite que você acesse (API) e gerencie o cluster Kubernetes. Por exemplo, você pode adicionar e excluir nós, pods, controladores de replicação,serviços e etc.
+
 
 #### Comandos Basicos
-```bash
-#Exemplos
-kubectl get pv
-kubectl get pvc
-kubectl get pods
-kubectl get svc
-```
+
+Comando   | Descrição
+--------- | ------
+kubectl get pods    | Listar os Pods
+kubectl get svc     | Listar os Serviços
+kubectl get deploy  | Listar os Deploys
+kubectl get ds      | Listar os Daemonsets
+kubectl get ingress | Listar os Ingress
+kubectl get pv      | Listar os Persistent Volumes
+kubectl get pvc     | Listar os Persistent Volumes Clains
+kubectl get all     | Listar os todos os objetos (nem todos)
+kubectl get sa      | Listar os Service Accounts
+kubectl get clusterrole | Listar os ClusterRoles
+
+
 ```bash
 # Informações basicas do cluster
 $ kubectl cluster-info
