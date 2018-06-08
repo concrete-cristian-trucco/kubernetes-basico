@@ -9,7 +9,7 @@
 3. Kubernetes arquitetura
 4. * [Instalando e configurando BareMetal](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/setup-baremetal-kubeadm.md)
 5. Acessando o Cluster (kubeconfig)
-6. Usando a API do Kubernetes - kubectl
+6. * [Usando a API do Kubernetes - kubectl](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/kubectl.md)
 7. Deployments e Deamonsets
 8. Services
 9. Ingress e controlador Ingress
