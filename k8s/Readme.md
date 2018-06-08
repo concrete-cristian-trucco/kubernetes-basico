@@ -12,7 +12,7 @@
 6. * [Usando a API do Kubernetes - kubectl](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/kubectl.md)
 7. Deployments e Deamonsets
 8. Services
-9. Ingress e controlador Ingress
+9. * [Ingress e controlador Ingress](https://github.com/concrete-cristian-trucco/kubernetes-basico/tree/master/k8s/ingress-controller)
 10. Deploy de aplicações 
 11. Secrets e Configmaps
 12. Monitorando e gerenciamento de logs (Prometheus e Grafana)
