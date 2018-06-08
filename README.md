@@ -5,6 +5,8 @@ autor: Cristian Trucco
 autor: cristian-trucco
 data: 06/06/2018
 ---
+
+---
 # Kubernetes básico
 
 ![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
@@ -31,6 +33,7 @@ data: 06/06/2018
 minikube start --kubernetes-version v1.10.0 --vm-driver=virtualbox --extra-config='apiserver.Authorization.Mode=RBAC'
 </pre> 
 
+---
 #### Acessar o Dashboard do Kubernetes
 <pre> minikube dashboard </pre> 
 
