@@ -1,16 +1,23 @@
+---
+title: Kubernetes básico
+description: Esse repositório tem algumas ferramentas para automátizar o processo de criação do cluster baremetal.
+author: Cristian Trucco
+ms.author: cristian-trucco
+ms.date: 06/06/2018
+---
 # Kubernetes básico
+
 ![Kubernetes](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)
 
 #### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
-
-* Apresentação: https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing
+* [Apresentação Kubernetes](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
 
 #### Necessário VirtualBox ou HiperV para Rodar localmente, ou rodar essa Demo no http://play-with-k8s.com
-* Api kubecetl: https://kubernetes.io/docs/tasks/tools/install-kubectl/
-* Minikube: https://github.com/kubernetes/minikube/releases
+* [Api kubecetl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+* [Minikube](https://github.com/kubernetes/minikube/releases)
 
 #### Para Windows utilize meu artigo que mostra como rodar o Minikube no Windows usando o Chocolatey
-* Minikube no Windows: https://concrete.com.br/2018/05/14/chocolatey-o-que-e-e-como-usar/
+* [Minikube no Windows](https://concrete.com.br/2018/05/14/chocolatey-o-que-e-e-como-usar/)
 
 ![Minikube](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/minikube.jpg)
 * Deploy de serviço: Usar os exemplos desse repositório
@@ -58,4 +65,5 @@ minikube start --kubernetes-version v1.10.0 --vm-driver=virtualbox --extra-confi
 
 
 ##### Documentação da Api do Kubernetes
-https://kubernetes.io/docs/api-reference/v1.9/#_v1_container
+* [Api do Kubernetes](https://kubernetes.io/docs/api-reference/v1.9/#_v1_container)
+
