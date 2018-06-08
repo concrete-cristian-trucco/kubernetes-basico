@@ -7,7 +7,7 @@
 1. Introdução
 2. Iniciando com o Kubernetes
 3. Kubernetes arquitetura
-4. Instalando e configurando BareMetal
+4. * [Instalando e configurando BareMetal](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/setup-baremetal-kubeadm.md)
 5. Acessando o Cluster (kubeconfig)
 6. Usando a API do Kubernetes - kubectl
 7. Deployments e Deamonsets
