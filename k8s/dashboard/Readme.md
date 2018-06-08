@@ -1,15 +1,20 @@
 
 ## Deploy do painel do kubernetes com Rbac
 
+O procedimento a seguir irá instalar o serviço do painel do Kubernetes. Por default o comando abaixo cria uma Service Account com um nível de acesso **admin**, com acesso a maioria dos objetos dentro do cluster.
+
 ```
 kubectl apply -f kubernetes-dashboard-rbac.yaml
 
 ```
-Criando uma SA para acessar o Dashboard do Kubernetes. 
+Criar uma Service Account para acessar o Dashboard do Kubernetes com acesso reduzido. 
+
+#### Para reduzir o nível de acesso para um equipe de desenvolvimento usar o dashboard criamos uma SA com o clusterrole view.
 
 ```
 kubectl apply -f sa-dashboard-dev.yaml
 ```
+* Obs: está SA não tem acesso a vizualizar secrets ne Roles no Kubernetes
 ======================================================================================
 ```
 ---
