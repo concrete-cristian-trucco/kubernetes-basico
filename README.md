@@ -66,3 +66,4 @@ minikube start --kubernetes-version v1.10.0 --vm-driver=virtualbox --extra-confi
 
 ##### Documentação da Api do Kubernetes
 * [Api do Kubernetes](https://kubernetes.io/docs/api-reference/v1.9/#_v1_container)
+
