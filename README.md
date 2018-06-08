@@ -1,8 +1,8 @@
 ---
 titulo: Kubernetes básico
-description: Esse repositório tem algumas ferramentas para automátizar o processo de criação do cluster baremetal.
-author: Cristian Trucco
-author: cristian-trucco
+descrição: Esse repositório tem algumas ferramentas para automátizar o processo de criação do cluster baremetal.
+autor: Cristian Trucco
+autor: cristian-trucco
 data: 06/06/2018
 ---
 # Kubernetes básico
