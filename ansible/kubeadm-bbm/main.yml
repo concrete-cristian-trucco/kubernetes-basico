@@ -76,7 +76,7 @@
    - name: Stop and disable firewalld.
      service: name=firewalld state=stopped enabled=false
         
-  # Certificados para conexão com VIC
+  # Certificados para conexão com Registry privado
    - name: Copia certificados para host
      copy:
         src: rootca.crt
@@ -95,10 +95,10 @@
    - name: Enable and start kubelet
      systemd: state=started enabled=yes name=kubelet
 
-# Login no VIC
-#   - name: Docker Login Private Registry VIC
+# Login Registry
+#   - name: Docker Login Private Registry
 #     docker_login:
-       #registry: vic.raiz.bbm
+       #registry: registry.com
        #username: yourself
 #       password: secrets3
        #reauthorize: yes
@@ -137,7 +137,8 @@
    # Apenas para testes
    - name: Habilitar Master /p rodar pods
      command: kubectl taint nodes --all node-role.kubernetes.io/master- 
-
+   
+   # Deploy de uma aplicação para teste 
    - name: deploy test
      shell: kubectl apply -f https://raw.githubusercontent.com/concrete-cristian-trucco/aplicacao-12-fatores/master/deployment-all.yaml
      environment:
