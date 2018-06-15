@@ -1,5 +1,15 @@
 ## Ansible
 
+### Introdução
+
+Ansible é uma simples e poderosa ferramenta de automatização criada para gerenciar múltiplas máquinas de uma vez. Além disso, é uma engine que permite executar Ansible Playbooks.
+
+Uma das principais características que faz o Ansible ser atrativo para uso em relação à automação de serviços é a sua linguagem bastante simples, ao ponto de ser “humanamente legível”, isto é, não precisando ter um notável conhecimento técnico para entender o que está sendo feito. Pelo fato da linguagem ser de fácil entendimento, é possível começar a criar serviços de automação de forma fácil e rápida. E para auxiliar ainda mais o entendimento do que está sendo processado, as tasks são executadas na ordem em que são escritas.
+
+Outras duas características interessantes do Ansible são: Ele é simples de começar a utilizar, pois apenas utiliza SSH para se conectar com os servidores e executar as tasks; e o Ansible utiliza do princípio da idempotência, isto é, seus módulos não executarão uma ação que não mudarão o estado do sistema.
+
+Por fim, o Ansible funciona em cima de uma arquitetura sem a presença de agentes (agentlesss) e não necessita de uma infraestrutura de segurança customizada, fazendo com que o processo de automação seja mais eficiente e mais seguro.
+
 O Ansible funciona com suporte de uma linguagem própria baseada em YAML. Sua estrutura é composta por:
 
 * **Playbook:**
