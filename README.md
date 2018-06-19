@@ -14,9 +14,14 @@ data: 06/06/2018
 #### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
 * [Apresentação Kubernetes](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
 
-#### Necessário VirtualBox ou HiperV para Rodar localmente, ou rodar essa Demo no http://play-with-k8s.com
+### Rodar o Kubernetes localmente
+#### Para rodar local usando o Minikube é necessário o VirtualBox ou HiperV, ou no caso de não de não querer instalar nada na máquina pode rodar essa Demo no http://play-with-k8s.com 
+
 * [Api kubecetl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * [Minikube](https://github.com/kubernetes/minikube/releases)
+
+#### Obs: Caso não conheça o **play with k8s** escrevi um artigo no **Medium** de como criar um cluster nessa plataforma, lá tem explicando tudo com detalhes.
+* [Play K8s Artigo Medium](https://medium.com/@cristianvitortrucco/rode-um-cluster-kubernetes-em-menos-de-10-minutos-ff9db3415639)
 
 #### Para Windows utilize meu artigo que mostra como rodar o Minikube no Windows usando o Chocolatey
 * [Minikube no Windows](https://concrete.com.br/2018/05/14/chocolatey-o-que-e-e-como-usar/)
