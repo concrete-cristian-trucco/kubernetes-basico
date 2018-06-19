@@ -2,6 +2,8 @@
 ### Motivação
 Esse guia é baseado na documentação oficial do kubernetes usando o kubeadm, a ideia desse guia é você realizar esse setup a primeira vez para ver como funciona o kubernetes, o que o cluster precisa ter para funcionar e realizar um deploy de uma aplicação.
 
+* Esse guia foi criado para ambiente Centos 7 e Redhat
+
 Criei um playbook para facilitar, mas somente use ele após entender como o Kubernetes funciona!
 * Playbook: https://raw.githubusercontent.com/concrete-cristian-trucco/kubernetes-basico/master/ansible/main.yml
 
