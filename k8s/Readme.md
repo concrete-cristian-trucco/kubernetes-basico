@@ -5,7 +5,7 @@
 * CONTEÚDO
 
 1. Introdução
-2. Iniciando com o Kubernetes
+2. *[Iniciando com o Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 3. Kubernetes arquitetura
 4. Kubeadm
 5. * [Instalando e configurando BareMetal](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/setup-baremetal-kubeadm.md)
