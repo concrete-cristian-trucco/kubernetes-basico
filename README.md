@@ -47,7 +47,7 @@ minikube start --kubernetes-version v1.10.0 --vm-driver=virtualbox --extra-confi
 #### Listar os pods
 <pre> kubectl get pods </pre> 
  
-#### Criar um pod 
+#### Rodando o primeiro exemplo
 * O POD é a menor unidade no cluster Kubernetes, é o objeto que faz a abstração dos containers, é nesse objeto onde nossas aplicações iram rodar. Para rodar um exemplo rápido para ver como o kubernetes funciona entre na pasta deploy-test/ que está na raiz do repositório e execute o comando para criar um pod usando o kubectl.
 
 * Os comandos a seguir serão executados para criar e expor uma aplicação no cluster Kubernetes.
