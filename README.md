@@ -5,7 +5,7 @@ autor: Cristian Trucco
 autor: cristian-trucco
 data: 06/06/2018
 ---
-
+Descrição: Este repositório é focado em Kubernetes - setups on premise (baremetal) ou seja em VMs tradicionais. Existem breves explicações de conceitos chaves do kubernetes. Tambémm coloquei oustras ferramentas que vão auxiliar na criação do cluster
 ---
 # Kubernetes básico
 
@@ -15,12 +15,13 @@ data: 06/06/2018
 * [Apresentação Kubernetes](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
 
 ### Rodar o Kubernetes localmente
-#### Para rodar local usando o Minikube é necessário o VirtualBox ou HiperV, ou no caso de não de não querer instalar nada na máquina pode rodar essa Demo no http://play-with-k8s.com 
+#### Rodar um cluster local é possível usando o Minikube é necessário o VirtualBox ou HiperV, ou no caso de não querer instalar nada na máquina pode rodar os labs no http://play-with-k8s.com é possivél criar e gerênciar o cluster direto do navegador.
 
 * [Api kubecetl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * [Minikube](https://github.com/kubernetes/minikube/releases)
 
-#### Obs: Caso não conheça o **play with k8s** escrevi um artigo no **Medium** de como criar um cluster nessa plataforma, lá tem explicando tudo com detalhes.
+#### Obs: Caso não conheça o **play with k8s** escrevi um artigo no **Medium** de como criar um cluster nessa plataforma, lá tem explicando tudo com detalhes você vai gastar menos de 10 minutos para ler o artigo e implementar o cluster.
+
 * [Play K8s Artigo Medium](https://medium.com/@cristianvitortrucco/rode-um-cluster-kubernetes-em-menos-de-10-minutos-ff9db3415639)
 
 #### Para Windows utilize meu artigo que mostra como rodar o Minikube no Windows usando o Chocolatey
