@@ -5,9 +5,11 @@ autor: Cristian Trucco
 autor: cristian-trucco
 data: 06/06/2018
 ---
-Descrição: Este repositório é focado em Kubernetes - setups on premise (baremetal) ou seja em VMs tradicionais. Existem breves explicações de conceitos chaves do kubernetes. Tambémm coloquei oustras ferramentas que vão auxiliar na criação do cluster
+
 ---
 # Kubernetes básico
+
+Este repositório é focado em Kubernetes - setups baseados em on premise (baremetal) ou seja em VMs tradicionais. Existem breves explicações de conceitos chaves do Kubernetes. Tambémm coloquei oustras ferramentas que vão auxiliar na criação do cluster, como playbooks ansible,vagrant para provisionamento de máquinas locais e Terraform para provisioar a infra em Prod.
 
 [![Kubernetes alt](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)](https://kubernetes.io)
 
