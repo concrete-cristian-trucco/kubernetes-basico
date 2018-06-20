@@ -14,7 +14,7 @@ Este repositório é focado em Kubernetes - setups baseados em on premise (barem
 [![Kubernetes alt](https://github.com/concrete-cristian-trucco/kubernetes-basico-nginx/blob/master/imagens/kubernetes.png)](https://kubernetes.io)
 
 #### Apresentação básica dos conceitos chaves e componentes do Kubernetes.
-* [Apresentação Kubernetes](https://docs.google.com/presentation/d/1gTFIslzy4sxyE8Ezzaq_PYlb6aehhD0W4JkQ5gmOiPA/edit?usp=sharing)
+* [Apresentação Kubernetes](https://docs.google.com/presentation/d/14VtepKVOzb0aMDCn4GkvJN3JYDCs2y6FkBVTTi-8H_0/edit?usp=sharing)
 
 ### Rodar o Kubernetes localmente
 #### Rodar um cluster local é possível usando o Minikube é necessário o VirtualBox ou HiperV, ou no caso de não querer instalar nada na máquina pode rodar os labs no http://play-with-k8s.com é possivél criar e gerênciar o cluster direto do navegador.
