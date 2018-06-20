@@ -7,7 +7,7 @@
 1. * [Introdução](https://github.com/concrete-cristian-trucco/kubernetes-basico)
 2. * [Iniciando com o Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 3. Kubernetes arquitetura
-4. Kubeadm
+4. * [Kubeadm](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/kubeadm.md)
 5. * [Instalando e configurando BareMetal](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/setup-baremetal-kubeadm.md)
 6. Acessando o Cluster (kubeconfig)
 7. * [Usando a API do Kubernetes - kubectl](https://github.com/concrete-cristian-trucco/kubernetes-basico/blob/master/k8s/kubectl.md)
