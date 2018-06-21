@@ -1,0 +1,54 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: aplicacao-12fatores
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: aplicacao-12fatores
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 50
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageValue: 200Mi
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: aplicacao-12fatores
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+       name: aplicacao-12fatores
+    spec:
+      containers:
+        - name: container-aplicacao-12fatores
+          image: concretecristiantrucco/bbmtalk
+          ports:
+            - containerPort: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: servico-aplicacao-12fatores
+spec:
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 32001
+
+  selector:
+    name: aplicacao-12fatores
