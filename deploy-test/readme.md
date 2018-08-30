@@ -12,4 +12,4 @@ Caso não seja passado ou declarado no yaml o namespace o cluster irá implantar
     
 #### Ingress
   Deve ter o Ingress Controller instalado no cluster para ingress funcionar via DNS
-* Ingress-Controller: https://github.com/concrete-cristian-trucco/kubernetes-basico/tree/master/k8s/ingress-controlleC
+* Ingress-Controller: https://github.com/concrete-cristian-trucco/kubernetes-basico/tree/master/k8s/ingress-controller
