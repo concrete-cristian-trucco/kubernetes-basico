@@ -1,6 +1,29 @@
-language: go
-go:
-  - "1.x"
-  - "1.8"
-  - "1.10.x"
-  - master
+language: bash
+services: docker
+
+env:
+  - VERSION=7.2 VARIANT=stretch/apache
+
+before_script:
+  - env | sort
+  - cd "$VERSION/$VARIANT"
+  - SUBVARIANT="${VARIANT#*/}"
+  - BASE_NAME_REPOSITORY=fabiojanio/php
+  - IMAGE_NAME="${BASE_NAME_REPOSITORY}-${SUBVARIANT}"
+  - IMAGE_FULL_VERSION="${BASE_NAME_REPOSITORY}-${SUBVARIANT}:${VERSION}-${VARIANT%/*}"
+  - IMAGE_LATEST_VERSION="${BASE_NAME_REPOSITORY}-${SUBVARIANT}:latest"
+
+script:
+  - docker build -t "${IMAGE_LATEST_VERSION}" .
+
+after_script:
+  - docker images
+
+before_deploy:
+  - echo "${DOCKER_HUB_PASSWORD}" | docker login --username "${DOCKER_HUB_USER}" --password-stdin
+
+deploy:
+  provider: script
+  script: docker push "${IMAGE_LATEST_VERSION}"
+  on:
+    branch: master
