@@ -1,5 +1,6 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
-language: yaml
+language: go
+go:
+  - "1.x"
+  - "1.8"
+  - "1.10.x"
+  - master
