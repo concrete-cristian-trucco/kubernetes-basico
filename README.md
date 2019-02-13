@@ -8,6 +8,8 @@ data: 06/06/2018
 
 
 [![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/concrete-cristian-trucco/my-stack)
+
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](https://stackshare.io/concrete-cristian-trucco/my-stack)
 ---
 # Kubernetes básico
 
